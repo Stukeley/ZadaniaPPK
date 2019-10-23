@@ -183,7 +183,7 @@ void Zadanie9(int N)
 {
 	cout << "Zadanie 9 dla [N = " << N << "]: " << endl;
 	
-	for(int k = 0; k< N*N; k++) // wyœwietla wszystkie wiersze
+	for(int k = 0; k< N*N; k++) // wyÅ“wietla wszystkie wiersze
 	{
 		for (int i = 0; i < N; i++) // wyswietla pojedynczy wiersz
 		{
