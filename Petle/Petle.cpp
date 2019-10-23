@@ -37,7 +37,7 @@ void Zadanie3(int N)
 	cout << "Zadanie 3 dla [N = " << N << "]: " << endl;
 	for (int i = 0; i < N; i++)
 	{
-		for(int j=0; j<N; j++)
+		for (int j = 0; j < N; j++)
 		{
 			char znak = j < i ? '.' : 'X';
 			cout << znak;
@@ -52,7 +52,7 @@ void Zadanie4(int N)
 	cout << "Zadanie 4 dla [N = " << N << "]: " << endl;
 	for (int i = 0; i < N; i++)
 	{
-		for(int j=0; j<N; j++)
+		for (int j = 0; j < N; j++)
 		{
 			char znak = j > N-(i + 2) ? 'X' : '.';
 			cout << znak;
@@ -67,13 +67,13 @@ void Zadanie5(int N)
 	cout << "Zadanie 5 dla [N = " << N << "]: " << endl;
 	for (int i = 0; i < N; i++)
 	{
-		if (i<=N/2)
+		if (i <= N / 2)
 		{
 			for (int j = 0; j < i; j++)
 			{
 				cout << ".";
 			}
-			for (int j = 0; j < N - 2 * i;j++)
+			for (int j = 0; j < N - 2 * i; j++)
 			{
 				cout << "X";
 			}
@@ -84,15 +84,15 @@ void Zadanie5(int N)
 		}
 		else
 		{
-			for (int j = 0; j < N-i-1; j++)
+			for (int j = 0; j < N - i - 1; j++)
 			{
 				cout << ".";
 			}
-			for (int j = 0; j < 2+2*i-N;j++)
+			for (int j = 0; j < 2 + 2 * i - N; j++)
 			{
 				cout << "X";
 			}
-			for (int j = 0; j < N-i-1; j++)
+			for (int j = 0; j < N - i - 1; j++)
 			{
 				cout << ".";
 			}
@@ -109,27 +109,42 @@ void Zadanie6(int N)
 	{
 		// .X.X
 		if(i<N/2){
-			for(int j=0; j<i; j++)
+			for (int j = 0; j < i; j++)
+			{
 				cout << '.';
-			for(int j=0; j<N/2-i; j++)
+			}
+			for (int j = 0; j < N / 2 - i; j++)
+			{
 				cout << 'X';
+			}
 			for (int j = 0; j < N / 2 - i - 1; j++)
+			{
 				cout << '.';
-			for(int j=0; j<i+1; j++)
+			}
+			for (int j = 0; j < i + 1; j++)
+			{
 				cout << 'X';
+			}
 		}
 		else
 		{
-			for(int j=0; j<N-i; j++)
+			for (int j = 0; j < N - i; j++)
+			{
 				cout << 'X';
-			for(int j=0; j<i-N/2; j++)
+			}
+			for (int j = 0; j < i - N / 2; j++)
+			{
 				cout << '.';
-			for (int j = 0; j < i-N/2+1; j++)
+			}
+			for (int j = 0; j < i - N / 2 + 1; j++)
+			{
 				cout << 'X';
-			for(int j=0; j<N-1-i; j++)
+			}
+			for (int j = 0; j < N - 1 - i; j++)
+			{
 				cout << '.';
+			}
 		}
-
 
 		cout << endl;
 	}
@@ -141,13 +156,17 @@ void Zadanie7(int N)
 	cout << "Zadanie 7 dla [N = " << N << "]: " << endl;
 	for (int i = 0; i < N; i++)
 	{
-		for(int j=0; j<N; j++)
+		for (int j = 0; j < N; j++)
 		{
 			char znak;
 			if (i % 2 == 0)
+			{
 				znak = j % 2 == 0 ? 'X' : '.';
+			}
 			else
+			{
 				znak = j % 2 == 0 ? '.' : 'X';
+			}
 			cout << znak;
 		}
 		cout << endl;
@@ -163,16 +182,24 @@ void Zadanie8(int N)
 		if(i<N/2)
 		{
 			for (int j = 0; j < N / 2; j++)
+			{
 				cout << 'X';
+			}
 			for (int j = 0; j < N / 2; j++)
+			{
 				cout << '.';
+			}
 		}
 		else
 		{
 			for (int j = 0; j < N / 2; j++)
+			{
 				cout << '.';
-			for(int j=0; j<N/2; j++)
+			}
+			for (int j = 0; j < N / 2; j++)
+			{
 				cout << 'X';
+			}
 		}
 		cout << endl;
 	}
@@ -183,21 +210,25 @@ void Zadanie9(int N)
 {
 	cout << "Zadanie 9 dla [N = " << N << "]: " << endl;
 	
-	for(int k = 0; k< N*N; k++) // wyœwietla wszystkie wiersze
+	for (int k = 0; k < N * N; k++) // wyœwietla wszystkie wiersze
 	{
 		for (int i = 0; i < N; i++) // wyswietla pojedynczy wiersz
 		{
-			if (k/N%2==0)
+			if (k / N % 2 == 0)
 			{
 				if (i % 2 == 0)
 				{
 					for (int j = 0; j < N; j++)
+					{
 						cout << 'X';
+					}
 				}
 				else
 				{
 					for (int j = 0; j < N; j++)
+					{
 						cout << '.';
+					}
 				}
 			}
 			else
@@ -205,12 +236,16 @@ void Zadanie9(int N)
 				if (i % 2 == 0)
 				{
 					for (int j = 0; j < N; j++)
+					{
 						cout << '.';
+					}
 				}
 				else
 				{
 					for (int j = 0; j < N; j++)
+					{
 						cout << 'X';
+					}
 				}
 			}
 		}
@@ -231,14 +266,17 @@ void Zadanie10(int W, int K)
 		if (i % 2 == 0)
 		{
 			for (int k = poczatek.size(); k < K; k++)
+			{
 				cout << 'X';
+			}
 		}
 		else
 		{
-			for(int k=poczatek.size(); k<K; k++)
+			for (int k = poczatek.size(); k < K; k++)
+			{
 				cout << '.';
+			}
 		}
-
 
 		cout << endl;
 		
@@ -267,13 +305,17 @@ void Zadanie11(int W, int K)
 
 		if (i % 2 == 0)
 		{
-			for (int k = poczatek.size()+koniec.size(); k < K; k++)
+			for (int k = poczatek.size() + koniec.size(); k < K; k++)
+			{
 				cout << 'X';
+			}
 		}
 		else
 		{
-			for(int k=poczatek.size()+koniec.size(); k<K; k++)
+			for (int k = poczatek.size() + koniec.size(); k < K; k++)
+			{
 				cout << '.';
+			}
 		}
 		
 		cout << koniec << endl;
