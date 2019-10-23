@@ -62,9 +62,13 @@ void Zadanie2(int tab[], int tab2[], int tab3[], const int N, const int M)
 			}
 		}
 		else if (i == N)
+		{
 			tab3[k++] = tab2[j++];
+		}
 		else if (j == M)
+		{
 			tab3[k++] = tab[i++];
+		}
 	}
 }
 
@@ -74,8 +78,10 @@ void Zadanie3(int tab[], int tab2[], const int M)
 	{
 		for(int j=0; j<i;j++)
 		{
-			if(tab[j]<tab[i])
+			if (tab[j] < tab[i])
+			{
 				tab2[i]++;
+			}
 		}
 	}
 }
@@ -83,8 +89,8 @@ void Zadanie3(int tab[], int tab2[], const int M)
 void Zadanie4(int tab[][K])
 {
 	int liczba = 1;
-	int i=0, j=0;
-	bool wDol=true;
+	int i = 0, j = 0;
+	bool wDol = true;
 
 	while (j<K)
 	{
@@ -132,9 +138,13 @@ void Zadanie5(int tab[][K])
 			tab[id][jd] = liczba++;
 		}
 		if (j + 1 < K)
+		{
 			j++;
+		}
 		else
+		{
 			i++;
+		}
 
 	}
 }
@@ -229,7 +239,9 @@ void Zadanie10(int tab[][K])
 		}
 		cout << "Min dla wiersza " << i << "-tego: " << min << endl;
 		if (min > maksymalneMin)
+		{
 			maksymalneMin = min;
+		}
 	}
 
 	cout << "Maksymalne minimum: " << maksymalneMin <<  "." << endl;
