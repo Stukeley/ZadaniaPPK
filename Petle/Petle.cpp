@@ -8,20 +8,21 @@ void Zadanie1(int W, int K)
 	for (int i = 0; i < W; i++)
 	{
 		char znak = i % 2 == 0 ? 'X' : '.';
-		for(int j=0; j<K; j++)
+		for (int j = 0; j < K; j++)
 		{
 			cout << znak;
 		}
 		cout << endl;
 	}
 	cout << endl;
-}
+}
+
 void Zadanie2(int W, int K)
 {
 	cout << "Zadanie 2 dla [W = " << W << ", K = " << K << "]: " << endl;
 	for (int i = 0; i < W; i++)
 	{
-		for(int j=0; j<K; j++)
+		for (int j = 0; j < K; j++)
 		{
 			char znak = j % 2 == 0 ? 'X' : '.';
 			cout << znak;
@@ -29,7 +30,8 @@ void Zadanie2(int W, int K)
 		cout << endl;
 	}
 	cout << endl;
-} 
+}
+
 void Zadanie3(int N)
 {
 	cout << "Zadanie 3 dla [N = " << N << "]: " << endl;
@@ -292,10 +294,10 @@ int main()
 	Zadanie2(5, 8);
 	Zadanie3(6);
 	Zadanie4(6);
-	Zadanie5(7); // dzia³a dla N nieparzystych
-	Zadanie6(10); // dzia³a dla N parzystych
+	Zadanie5(7); // dziala dla N nieparzystych
+	Zadanie6(10); // dziala dla N parzystych
 	Zadanie7(8);
-	Zadanie8(8); // dzia³a dla N parzystych
+	Zadanie8(8); // dziala dla N parzystych
 	Zadanie9(3);
 	Zadanie10(7, 7);
 	Zadanie11(11, 12);
