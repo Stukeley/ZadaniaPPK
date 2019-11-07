@@ -247,7 +247,7 @@ void Zadanie10(int tab[][K])
 	cout << "Maksymalne minimum: " << maksymalneMin <<  "." << endl;
 }
 
-// Zadaanie 11 jest analogiczne do pozostalych (rozni sie tylko struktura danych)
+// Zadanie 11 jest analogiczne do pozostalych (rozni sie tylko struktura danych)
 
 
 int main()
