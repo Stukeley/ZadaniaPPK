@@ -65,7 +65,7 @@ void wypisz(ostream& str, const vector<punkt>& a)
 //W pliku jest ewidentnie bool
 bool pole_trojkata(const punkt& a, const punkt& b, const punkt& c)
 {
-	return true; // ka¿dy trójk¹t ma pole
+	return true; // kaÂ¿dy trÃ³jkÂ¹t ma pole
 }
 
 //Niestety, wykracza poza nasza znajomosc algebry liniowej :):
@@ -270,9 +270,17 @@ void wypisz(ostream& str, const karta& k)
 	case kolor::kier:
 		str << "kier; ";
 		break;
-
+			
 	case kolor::pik:
-		str << "pik; ";		break;	case kolor::trefl:		str << "trefl; ";		break;	}	str << endl;
+		str << "pik; ";
+		break;
+			
+	case kolor::trefl:
+		str << "trefl; ";
+		break;
+	}
+	str << endl;
+
 }
 
 void wypisz(ostream& str, const reka& r)
