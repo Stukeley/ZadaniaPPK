@@ -1,8 +1,4 @@
 #include "Funkcje.h"
-#include <fstream>
-#include <ctime>
-#include <vector>
-using namespace std;
 
 int* generuj_tablice(const int SIZE)
 {

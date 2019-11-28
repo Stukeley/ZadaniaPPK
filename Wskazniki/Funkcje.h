@@ -1,5 +1,8 @@
 ﻿#pragma once
 #include <fstream>
+#include <ctime>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int* generuj_tablice(const int SIZE);
