@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // Definicja elementu listy jednokierunkowej --------------------------------------------------
@@ -52,11 +53,11 @@ void usunOstatniIteracyjnie(element*& pHead);
 
 void odwrocListe(element*& pHead);
 
-// todo: ponizej
-
 void usunPowtorzenia(element*& pHead);
 
 void usunParzyste(element*& pHead);
+
+//! skip
 
 void dodajIteracyjnieDoListyPosortowanej(element*& pHead, typ liczba);
 

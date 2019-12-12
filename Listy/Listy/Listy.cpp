@@ -4,7 +4,7 @@ int main()
 {
 	element* pGlowa = nullptr;
 
-	for (auto i : { 1, 5, 7, 8, 12, 15, 8 })
+	for (auto i : { 2, 5, 7, 8, 12, 15 })
 	{
 		dodajNaKoniecIteracyjnie(pGlowa, i);
 	}
@@ -15,7 +15,7 @@ int main()
 	//auto jd = znajdzElementIteracyjnie(pGlowa, 8);
 	//usunElementy(pGlowa, 8);
 
-	odwrocListe(pGlowa);
+	dodajIteracyjnieDoListyPosortowanej(pGlowa, 0);
 	wypiszOdPoczatkuRekurencyjnie(pGlowa, cout);
 
 	usunListeIteracyjnie(pGlowa);
