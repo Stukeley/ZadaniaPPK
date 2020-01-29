@@ -57,19 +57,17 @@ void usunPowtorzenia(element*& pHead);
 
 void usunParzyste(element*& pHead);
 
-//! skip
-
 void dodajIteracyjnieDoListyPosortowanej(element*& pHead, typ liczba);
 
 void dodajRekurencyjnieDoListyPosortowanej(element*& pHead, typ liczba);
 
-// useless funkcje z pdf ponizej -----------------------------------------------------------
 void usunOstatniRekurencyjnie(element*& pHead);
 
+element* scalListyPosortowane(element*& pH1, element*& pH2);
+
+// useless funkcje z pdf ponizej -----------------------------------------------------------
 element* sumaMnogosciowa(element* pH1, element* pH2);
 
 element* iloczynMnogosciowy(element* pH1, element* pH2);
 
 element* roznicaMnogosciowa(element* pH1, element* pH2);
-
-element* scalListyPosortowane(element*& pH1, element*& pH2);
