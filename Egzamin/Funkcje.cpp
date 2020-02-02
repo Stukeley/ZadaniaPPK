@@ -1,4 +1,11 @@
 #include <iostream>
+#include <vector>
+#include <fstream>
+
+// ** Z czego mozna korzystac podczas egzaminu
+// std::max             <algorithm>
+// strlen	               <cstrng>
+// std::vector (jak jest w poleceniu)	<vector>
 
 struct element
 {
@@ -68,10 +75,85 @@ int wysokoscDrzewa(wezel* pRoot)
 {
 	if (!pRoot)
 		return 0;
+	else
+	{
+		if (wysokoscDrzewa(pRoot->pLewy) > wysokoscDrzewa(pRoot->pPrawy))
+			return 1 + wysokoscDrzewa(pRoot->pLewy);
+		else
+			return 1 + wysokoscDrzewa(pRoot->pPrawy);
+	}
+}
 
-	int maxsWysokosc = 1;
-	
+// 5.
+int dwaPotomki(wezel* pRoot)
+{
+	if (!pRoot)
+		return 0;
 
+	if (pRoot->pPrawy && pRoot->pLewy)
+		return 1 + dwaPotomki(pRoot->pPrawy) + dwaPotomki(pRoot->pLewy);
+	else if (pRoot->pPrawy)
+		return dwaPotomki(pRoot->pPrawy);
+	else
+		return dwaPotomki(pRoot->pLewy);
+}
 
-	return maxsWysokosc;
+// 6.
+std::vector<int> liczbyZPliku(std::string nazwa)
+{
+	std::vector<int> liczby;
+	std::ifstream plik(nazwa);
+
+	if (!plik)
+		return liczby;
+
+	int temp;
+	while (plik >> temp)
+		liczby.push_back(temp);
+
+	plik.close();
+	return liczby;
+}
+
+// 7.
+int* nowaTablica(int tab[], const int rozmiar)
+{
+	int* nowa = new int[2 * rozmiar];
+
+	for (int index = 0; index < rozmiar; index++)
+	{
+		nowa[index * 2] = tab[index];
+		nowa[index * 2 + 1] = tab[index] * tab[index];
+	}
+
+	return nowa;
+}
+
+void kumulacja(int tab[], const int rozmiar)
+{
+	for (int i = 1; i < rozmiar; i++)
+	{
+		int suma = 0;
+		for (int j = 0; j <= i; j++)
+		{
+			suma += tab[j];
+		}
+		tab[i] = suma;
+	}
+}
+
+// 9.
+#define swap(t,x,y) do{t temp = x; x=y; y=temp;}while(0);
+
+// 10.
+void odwroc(char*& napis) // rozmiar nie wlicza nulla
+{
+	int rozmiar = strlen(napis);
+	for (int i = 0; i < rozmiar / 2; i++)
+	{
+		char temp = napis[i];
+		napis[i] = napis[rozmiar - i - 1];
+		napis[rozmiar - i - 1] = temp;
+	}
+	napis[rozmiar] = '\0';
 }
