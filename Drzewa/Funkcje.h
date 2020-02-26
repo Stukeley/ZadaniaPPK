@@ -75,6 +75,16 @@ void rotacja_w_prawo(wezel*& pRoot, wezel* p);
 
 void zbalansuj(wezel*& pRoot);
 
+void listawszerz2drzewo(wezel*& pRoot, T lista[], const int rozmiar);
+
+wezel* katy(wezel* pRoot, const int k);
+
+bool zawiera_ciag_wartosci(wezel*& pRoot, T lista[], const int rozmiar);
+
+void posortowane2zrownowazone(wezel*& pRoot, T lista[], const int rozmiar);
+
+void odleglosc(wezel* pRoot, wezel* p, wezel* q);
+
 // Powtorzone --------------------------------------------
 
 // Bylo na wykladzie

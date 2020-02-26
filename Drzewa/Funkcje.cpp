@@ -164,10 +164,10 @@ void wypiszDrzewoWszerz(wezel* pRoot)
 	}
 }
 
-std::ostream& operator<<(std::ostream& ss, wezel* pRoot)
-{
-	// TODO: insert return statement here
-}
+////std::ostream& operator<<(std::ostream& ss, wezel* pRoot)
+////{
+////	// TODO: insert return statement here
+////}
 
 // Znajdywanie wêz³a w drzewie --------------------------------------------------
 
@@ -221,6 +221,46 @@ wezel* znajdzRekurencyjnie(wezel* pRoot, const typ& wartosc)
 	}
 	else
 		return nullptr;
+}
+
+wezel* katy(wezel* pRoot, const int k)
+{
+	vector<wezel*> wezly;
+
+	if (pRoot)
+	{
+		std::deque<wezel*> potomki;
+		potomki.push_front(pRoot);
+
+		while (not potomki.empty())
+		{
+			auto p = potomki.back();
+			potomki.pop_back();
+
+			wezly.push_back(p);
+
+			if (p->pLewy)
+				potomki.push_front(p->pLewy);
+			if (p->pPrawy)
+				potomki.push_front(p->pPrawy);
+		}
+	}
+
+	int n = wezly.size();
+
+	do
+	{
+		for (int i = 0; i < n - 1; i++)
+		{
+			if (wezly[i] > wezly[i + 1])
+			{
+				swap(wezly[i], wezly[i + 1]);
+			}
+		}
+		n = n - 1;
+	} while (n > 1);
+
+	return wezly[k - 1];
 }
 
 // Znajdywanie rodzica -----------------------------------------------------------
@@ -286,6 +326,48 @@ void zbalansuj(wezel*& pRoot)
 {
 }
 
+void listawszerz2drzewo(wezel*& pRoot, T lista[], const int rozmiar)
+{
+	if (rozmiar < 1)
+		return;
+
+	pRoot = new wezel{ lista[0], nullptr, nullptr };
+
+	for (int i = 1; i < rozmiar; i++)
+	{
+		auto temp = pRoot;
+		while (true)
+		{
+			if (lista[i] < temp->wartosc)
+			{
+				if (temp->pLewy)
+				{
+					temp = temp->pLewy;
+					continue;
+				}
+				else
+				{
+					temp->pLewy = new wezel{ lista[i], nullptr, nullptr };
+					break;
+				}
+			}
+			if (lista[i] >= temp->wartosc)
+			{
+				if (temp->pPrawy)
+				{
+					temp = temp->pPrawy;
+					continue;
+				}
+				else
+				{
+					temp->pPrawy = new wezel{ lista[i], nullptr, nullptr };
+					break;
+				}
+			}
+		}
+	}
+}
+
 int wysokoscDrzewa(wezel* pRoot)
 {
 	return pRoot ? 1 + std::max(wysokoscDrzewa(pRoot->pLewy), wysokoscDrzewa(pRoot->pPrawy)) : 0;
@@ -317,4 +399,17 @@ int policzWezly(wezel* pRoot)
 	if (pRoot)
 		return 1 + policzWezly(pRoot->pLewy) + policzWezly(pRoot->pPrawy);
 	return 0;
+}
+
+bool zawiera_ciag_wartosci(wezel*& pRoot, T lista[], const int rozmiar)
+{
+	return false;
+}
+
+void posortowane2zrownowazone(wezel*& pRoot, T lista[], const int rozmiar)
+{
+}
+
+void odleglosc(wezel* pRoot, wezel* p, wezel* q)
+{
 }
