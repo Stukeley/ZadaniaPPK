@@ -14,8 +14,6 @@ struct element
 
 // Plik Lista_dwukierunkowa.pdf
 
-void dodajNaPoczatek(element*& pHead, element*& pTail, const T& wartosc);
-
 void dodajNaKoniec(element*& pHead, element*& pTail, const T& wartosc);
 
 element* znajdz(element* pHead, const T& wartosc);
@@ -36,6 +34,8 @@ void przesunListe(element*& pHead, element*& pTail);
 
 // Wyklad
 
+void dodajNaPoczatek(element*& pHead, element*& pTail, const typ& wartosc);
+
 void usunRekurencyjnie(element*& pHead, element*& pTail);
 
 void wypiszOdKonca(element* pTail);
@@ -44,4 +44,4 @@ void wypiszOdPoczatku(element* pHead);
 
 // Powtorzone
 
-void dodajNaPoczatek(element*& pHead, element*& pTail, const typ& wartosc);
+//void dodajNaPoczatek(element*& pHead, element*& pTail, const typ& wartosc);
