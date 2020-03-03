@@ -60,6 +60,7 @@ void wypisz(element* pHead)
 			cout << temp->wartosc << ' ';
 			temp = temp->pNext;
 		}
+		cout << temp->wartosc;
 	}
 }
 
@@ -79,39 +80,125 @@ int zliczElementy(element* pHead)
 
 void usun(element*& pHead, const T& wartosc)
 {
+	if (pHead->wartosc == wartosc)
+	{
+		auto temp2 = pHead;
+
+		while (temp2->pNext != pHead)
+		{
+			temp2 = temp2->pNext;
+		}
+		temp2->pNext = pHead->pNext;
+
+		temp2 = pHead->pNext;
+		delete pHead;
+		pHead = temp2;
+		return;
+	}
+
 	auto temp = pHead;
-	bool znaleziono = false;
-	while (temp->pNext->pNext != pHead)
+
+	while (temp->pNext != pHead)
 	{
 		if (temp->pNext->wartosc == wartosc)
 		{
-			znaleziono = true;
-			if (temp == pHead)
-			{
-				pHead = pHead->pNext;
-				break;
-			}
-			else{
-				
-				return;
-			}
+			auto temp3 = temp->pNext->pNext;
+			delete temp->pNext;
+			temp->pNext = temp3;
+			return;
 		}
 		temp = temp->pNext;
 	}
-
-	if (!znaleziono)
-		return;
-	//ustawianie ostatniego na nowy phead
 }
 
 void usunWszystkie(element*& pHead, const T& wartosc)
 {
+	while (pHead->wartosc == wartosc && pHead)
+	{
+		auto temp2 = pHead;
+
+		while (temp2->pNext != pHead)
+		{
+			temp2 = temp2->pNext;
+		}
+		temp2->pNext = pHead->pNext;
+
+		if (pHead->pNext == pHead)
+		{
+			delete pHead;
+			pHead = nullptr;
+			return;
+		}
+
+		auto temp3 = pHead->pNext;
+		delete pHead;
+		pHead = temp3;
+	}
+
+	element* temp = pHead;
+
+	while (temp->pNext != pHead && pHead)
+	{
+		if (temp->pNext->wartosc == wartosc)
+		{
+			auto temp3 = temp->pNext->pNext;
+			delete temp->pNext;
+			temp->pNext = temp3;
+		}
+		temp = temp->pNext;
+	}
 }
 
 void usun(element*& pHead, const element* pDoUsuniecia)
 {
+	if (pHead == pDoUsuniecia)
+	{
+		auto temp2 = pHead;
+
+		while (temp2->pNext != pHead)
+		{
+			temp2 = temp2->pNext;
+		}
+		temp2->pNext = pHead->pNext;
+
+		temp2 = pHead->pNext;
+		delete pHead;
+		pHead = temp2;
+		return;
+	}
+
+	auto temp = pHead;
+
+	while (temp->pNext != pHead)
+	{
+		if (temp->pNext == pDoUsuniecia)
+		{
+			auto temp3 = temp->pNext->pNext;
+			delete temp->pNext;
+			temp->pNext = temp3;
+			return;
+		}
+		temp = temp->pNext;
+	}
 }
 
 void polacz(element*& pH1, element*& pH2)
 {
+	auto temp = pH1;
+
+	while (temp->pNext != pH1)
+	{
+		temp = temp->pNext;
+	}
+	temp->pNext = pH2;
+
+	temp = pH2;
+
+	while (temp->pNext != pH2)
+	{
+		temp = temp->pNext;
+	}
+	temp->pNext = pH1;
+
+	pH2 = nullptr;
 }
